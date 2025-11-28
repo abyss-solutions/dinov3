@@ -101,7 +101,7 @@ def _make_dinov3_dpt_depther(
         **kwargs,
     )
 
-    if pretrained:
+    if pretrained and depther_weights is not None:
         if isinstance(depther_weights, DepthWeights):
             assert depther_weights == DepthWeights.SYNTHMIX, f"Unsupported depther weights {depther_weights}"
             weights_name = depther_weights.value.lower()
